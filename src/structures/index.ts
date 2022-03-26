@@ -1,2 +1,2 @@
-export * from './Node'
-export * from './SinglyLinkedList'
+export * from './Node/Node'
+export * from './SinglyLinkedList/SinglyLinkedList'
