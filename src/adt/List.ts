@@ -12,6 +12,8 @@ export abstract class List<A> {
 
     abstract values(): Array<A>;
 
+    abstract forEach(f: (v: A) => void): void;
+
     size: number = 0;
 
 }

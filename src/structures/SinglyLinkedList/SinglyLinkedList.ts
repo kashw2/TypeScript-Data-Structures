@@ -121,4 +121,14 @@ export class SinglyLinkedList<A> extends List<A> {
         return array;
     }
 
+    forEach(f: (v: A) => void): void {
+        let rover: Node<A> | null | undefined = this.head;
+        for (let i = 0; i <= this.size; i++) {
+            if (rover?.getNext()) {
+                f(rover?.getValue());
+                rover = rover?.getNext();
+            }
+        }
+    }
+
 }
