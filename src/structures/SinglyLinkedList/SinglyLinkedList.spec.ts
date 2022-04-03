@@ -32,4 +32,10 @@ describe('SinglyLinkedList', () => {
         expect(result).toEqual("Test")
     });
 
+    it('should map over values and transform them', () => {
+        const list = new SinglyLinkedList<number>().add(1).add(2).add(3);
+        const result = list.map(v => v + 1).get(2);
+        expect(result).toEqual(4)
+    });
+
 });
