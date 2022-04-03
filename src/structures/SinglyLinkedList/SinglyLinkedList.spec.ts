@@ -38,4 +38,10 @@ describe('SinglyLinkedList', () => {
         expect(result).toEqual(4)
     });
 
+    it('should return all the values as an array', () => {
+        const list = new SinglyLinkedList<number>().add(1).add(2).add(3).add(4);
+        const result = list.values();
+        expect(result).toEqual([1, 2, 3, 4])
+    });
+
 });

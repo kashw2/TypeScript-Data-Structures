@@ -10,6 +10,8 @@ export abstract class List<A> {
 
     abstract map<B extends A>(f: (v: A) => B): List<B>;
 
+    abstract values(): Array<A>;
+
     size: number = 0;
 
 }

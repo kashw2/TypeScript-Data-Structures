@@ -107,4 +107,18 @@ export class SinglyLinkedList<A> extends List<A> {
         return newSinglyLinkedList;
     }
 
+    values(): Array<A> {
+        let rover: Node<A> | null | undefined = this.head;
+        let array: Array<A> = [];
+        for (let i = 0; i < this.size; i++) {
+            if (rover?.getValue()) {
+                array.push(rover?.getValue());
+            }
+            if (rover?.getNext()) {
+                rover = rover?.getNext();
+            }
+        }
+        return array;
+    }
+
 }
