@@ -10,8 +10,8 @@ export class SinglyLinkedList<A> extends List<A> {
 
     private head: Node<A> | null = null;
 
-    add(value: A): List<A> {
-        if (this.head === null) {
+    add(value: A): SinglyLinkedList<A> {
+        if (!this.head) {
             this.head = new Node<A>(value, null)
             this.size++;
             return this;
@@ -27,7 +27,7 @@ export class SinglyLinkedList<A> extends List<A> {
         return this;
     }
 
-    delete(index: number): List<A> {
+    delete(index: number): SinglyLinkedList<A> {
         if (index < 0)
             throw new Error("Index is out of bounds")
 
@@ -52,6 +52,7 @@ export class SinglyLinkedList<A> extends List<A> {
                 }
             }
         }
+        this.size--;
         this.head = rover as Node<A> | null;
         return this;
     }
@@ -73,7 +74,7 @@ export class SinglyLinkedList<A> extends List<A> {
         return rover?.getValue() as A | null
     }
 
-    update(index: number, value: A): List<A> {
+    update(index: number, value: A): SinglyLinkedList<A> {
         if (index < 0)
             throw new Error("Index is out of bounds");
 
@@ -91,5 +92,19 @@ export class SinglyLinkedList<A> extends List<A> {
     }
 
     size: number = 0;
+
+    map<B extends A>(f: (v: A) => B): SinglyLinkedList<B> {
+        let newSinglyLinkedList: SinglyLinkedList<B> = new SinglyLinkedList<B>();
+        let rover: Node<A> | null | undefined = this.head;
+        for (let i = 0; i <= this.size; i++) {
+            if (rover?.getValue()) {
+                newSinglyLinkedList.add(f(rover?.getValue()))
+            }
+            if (rover?.getNext()) {
+                rover = rover?.getNext()
+            }
+        }
+        return newSinglyLinkedList;
+    }
 
 }
