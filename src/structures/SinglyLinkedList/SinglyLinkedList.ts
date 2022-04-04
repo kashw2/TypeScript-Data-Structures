@@ -1,5 +1,29 @@
 import {List} from "../../adt";
-import {Node} from "../Node/Node";
+
+class Node<A> {
+
+    constructor(private value: A, private next: Node<A> | null) {
+    }
+
+    public getValue(): A {
+        return this.value;
+    }
+
+    public getNext(): Node<A> | null {
+        return this.next;
+    }
+
+    public setNext(node: Node<A>): Node<A> {
+        this.next = node;
+        return this;
+    }
+
+    public setValue(value: A): Node<A> {
+        this.value = value;
+        return this;
+    }
+
+}
 
 export class SinglyLinkedList<A> extends List<A> {
 
@@ -60,7 +84,6 @@ export class SinglyLinkedList<A> extends List<A> {
     get(index: number): A | null {
         if (index < 0)
             throw new Error("Index is out of bounds");
-
         if (this.head === null) {
             return null;
         }
@@ -71,7 +94,7 @@ export class SinglyLinkedList<A> extends List<A> {
             }
             rover = rover?.getNext()
         }
-        return rover?.getValue() as A | null
+        return rover?.getValue() || null;
     }
 
     update(index: number, value: A): SinglyLinkedList<A> {
