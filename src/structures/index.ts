@@ -1,2 +1,2 @@
-export * from './Node/Node'
-export * from './SinglyLinkedList/SinglyLinkedList'
+export * from './SinglyLinkedList/SinglyLinkedList';
+export * from './DoublyLinkedList/DoublyLinkedList';
