@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "webpack": "5.89.0",
-    "ts-loader": "9.5.0",
+    "ts-loader": "9.5.1",
     "@types/jasmine": "4.6.2",
     "jasmine": "3.99.0",
     "jasmine-spec-reporter": "7.0.0",
