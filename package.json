@@ -16,7 +16,7 @@
   "author": "Keanu Ashwell",
   "license": "ISC",
   "dependencies": {
-    "typescript": "5.5.4"
+    "typescript": "5.6.3"
   },
   "devDependencies": {
     "webpack": "5.94.0",
