@@ -26,6 +26,6 @@
     "jasmine-spec-reporter": "7.0.0",
     "jasmine-ts": "0.4.0",
     "ts-node": "10.9.2",
-    "webpack-cli": "5.1.4"
+    "webpack-cli": "6.0.1"
   }
 }
