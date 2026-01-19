@@ -19,7 +19,7 @@
     "typescript": "5.9.2"
   },
   "devDependencies": {
-    "webpack": "5.101.3",
+    "webpack": "5.104.1",
     "ts-loader": "9.5.2",
     "@types/jasmine": "4.6.5",
     "jasmine": "3.99.0",
