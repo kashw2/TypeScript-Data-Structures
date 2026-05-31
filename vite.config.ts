@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
@@ -12,5 +13,9 @@ export default defineConfig({
         outDir: 'dist',
         emptyOutDir: true,
         minify: false,
+    },
+    test: {
+        globals: true,
+        include: ['src/**/*.{spec,test}.ts'],
     },
 });
