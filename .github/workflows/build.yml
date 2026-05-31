@@ -1,5 +1,4 @@
 name: Build
-
 on:
   workflow_dispatch:
   pull_request:
@@ -8,21 +7,18 @@ on:
       - src/**
     branches:
       - main
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
-
       - name: setup node
         uses: actions/setup-node@v6
         with:
-          node-version: '24'
-
+          node-version: "24"
       - name: install dependencies
-        run: npm install
-
+        run: npm ci --force
       - name: build
         run: npm run build
+
